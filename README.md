@@ -18,3 +18,6 @@ Versions
 *********************
 v0.1
 initial version - includes only the freedom board KL25Z.
+
+--------
+0xc0170, 2013
