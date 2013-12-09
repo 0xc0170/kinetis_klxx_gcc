@@ -12,12 +12,12 @@ Once they will be officially released, I'll add a link here.
 Then just copy the output .bin file to the msd drive on your computer (named mbed). The LED should be blinking.
 
 ### MORE INFO
-Please visit my blog [Embedded stuff around the web](http://embeddedworldweb.blogspot.com) or follow me on twitter.
+Please visit my blog [Embedded stuff around the web](http://embeddedworldweb.blogspot.com) or follow me on [Twitter](https://twitter.com/0xc0170).
 
 Versions
 *********************
 v0.1
-initial version - includes only the freedom board KL25Z.
+initial version - includes only the freedom board KL25Z. More will come!
 
 --------
 0xc0170, 2013

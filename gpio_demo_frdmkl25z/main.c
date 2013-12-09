@@ -16,49 +16,33 @@
 #include "main.h"
 #include "MKL25Z4.h"
 
-static void delay(void);
-
-/**
- * \brief  LED1 Toggle with a delay
- * \param  void
- * \return void
- */
 int main(void)
 {
     gpio_init();
 
-    PTB->PSOR = (1 << 18);
+    PTB->PSOR = (1U << 18U);
 
     while (1) {
-        PTB->PTOR = (1 << 18);
+        PTB->PTOR = (1U << 18U);
         delay();
     }
 }
 
-/**
- * \brief  Button and LED initialization
- * \param  void
- * \return void
- */
 void gpio_init(void)
 {
     SIM->SCGC5 = SIM_SCGC5_PORTB_MASK;
-    PORTB->PCR[18] = PORT_PCR_MUX(1);
-    PTB->PDDR = (1 << 18);
+    PORTB->PCR[18] = PORT_PCR_MUX(1U);
+    PTB->PDDR = (1U << 18U);
 }
 
-/**
- * \brief  Silly delay
- * \param  void
- * \return void
- */
 void delay(void)
 {
     volatile unsigned int i,j;
 
-    for(i=0; i<50000; i++) {
-        for(j=0; j<100; j++)
+    for (i = 0U; i < 50000U; i++) {
+        for (j = 0U; j < 100U; j++) {
             __asm__("nop");
+        }
     }
 }
 
