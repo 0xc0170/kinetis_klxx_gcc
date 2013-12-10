@@ -20,7 +20,10 @@ v0.1
 initial version - includes only the freedom board KL25Z. More will come!
 
 v0.2
-KL02 project added
+KL02 project added.
+
+v0.3
+KL05, KL46 files added.
 
 --------
-0xc0170, 2013
+Martin Kojtal (0xc0170), 2013

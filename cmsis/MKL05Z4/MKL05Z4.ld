@@ -1,5 +1,5 @@
 /*
- * KL02Z ARM GCC linker script file, Martin Kojtal (0xc0170)
+ * KL05Z ARM GCC linker script file, Martin Kojtal (0xc0170)
  */
 
 MEMORY

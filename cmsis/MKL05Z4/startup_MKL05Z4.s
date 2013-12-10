@@ -1,4 +1,4 @@
-/* KL02Z startup ARM GCC, Martin Kojtal (0xc0170)
+/* KL05Z startup ARM GCC, Martin Kojtal (0xc0170)
  * Purpose: startup file for Cortex-M0 devices. Should use with
  *   GCC for ARM Embedded Processors
  * Version: V1.2
@@ -96,16 +96,16 @@ __isr_vector:
     .long    SysTick_Handler       /* SysTick Handler */
 
     /* External interrupts */
-    .long   Default_Handler         /* Reserved interrupt 16 */
-    .long   Default_Handler         /* Reserved interrupt 17 */
-    .long   Default_Handler         /* Reserved interrupt 18 */
-    .long   Default_Handler         /* Reserved interrupt 19 */
+    .long   DMA0_IRQHandler         /* DMA channel 0 transfer complete interrupt */
+    .long   DMA1_IRQHandler         /* DMA channel 1 transfer complete interrupt */
+    .long   DMA2_IRQHandler         /* DMA channel 2 transfer complete interrupt */
+    .long   DMA3_IRQHandler         /* DMA channel 3 transfer complete interrupt */
     .long   Default_Handler         /* Reserved interrupt 20 */
     .long   FTFA_IRQHandler         /* FTFA interrupt */
     .long   LVD_LVW_IRQHandler      /* Low Voltage Detect, Low Voltage Warning */
-    .long   Default_Handler         /* Reserved interrupt 23 */
+    .long   LLW_IRQHandler          /* Low Leakage Wakeup */
     .long   I2C0_IRQHandler         /* I2C0 interrupt */
-    .long   I2C1_IRQHandler         /* I2C0 interrupt 25 */
+    .long   Default_Handler         /* Reserved interrupt 25 */
     .long   SPI0_IRQHandler         /* SPI0 interrupt */
     .long   Default_Handler         /* Reserved interrupt 27 */
     .long   UART0_IRQHandler        /* UART0 status/error interrupt */
@@ -116,13 +116,13 @@ __isr_vector:
     .long   TPM0_IRQHandler         /* TPM0 fault, overflow and channels interrupt */
     .long   TPM1_IRQHandler         /* TPM1 fault, overflow and channels interrupt */
     .long   Default_Handler         /* Reserved interrupt 35 */
-    .long   Default_Handler         /* Reserved interrupt 36 */
-    .long   Default_Handler         /* Reserved interrupt 37 */
-    .long   Default_Handler         /* Reserved interrupt 38 */
+    .long   RTC_IRQHandler          /* RTC interrupt */
+    .long   RTC_Seconds_IRQHandler  /* RTC seconds interrupt */
+    .long   PIT_IRQHandler          /* PIT timer interrupt */
     .long   Default_Handler         /* Reserved interrupt 39 */
     .long   Default_Handler         /* Reserved interrupt 40 */
-    .long   Default_Handler         /* Reserved interrupt 41 */
-    .long   Default_Handler         /* Reserved interrupt 42 */
+    .long   DAC0_IRQHandler         /* DAC interrupt */
+    .long   TSI0_IRQHandler         /* TSI0 interrupt */
     .long   MCG_IRQHandler          /* MCG interrupt */
     .long   LPTimer_IRQHandler      /* LPTimer interrupt */
     .long   Default_Handler         /* Reserved interrupt 45 */
@@ -189,16 +189,25 @@ Reset_Handler:
     def_default_handler     SysTick_Handler
     def_default_handler     Default_Handler
 
+    def_default_handler     DMA0_IRQHandler
+    def_default_handler     DMA1_IRQHandler
+    def_default_handler     DMA2_IRQHandler
+    def_default_handler     DMA3_IRQHandler
     def_default_handler     FTFA_IRQHandler
     def_default_handler     LVD_LVW_IRQHandler
+    def_default_handler     LLW_IRQHandler
     def_default_handler     I2C0_IRQHandler
-    def_default_handler     I2C1_IRQHandler
     def_default_handler     SPI0_IRQHandler
     def_default_handler     UART0_IRQHandler
     def_default_handler     ADC0_IRQHandler
     def_default_handler     CMP0_IRQHandler
     def_default_handler     TPM0_IRQHandler
     def_default_handler     TPM1_IRQHandler
+    def_default_handler     RTC_IRQHandler
+    def_default_handler     RTC_Seconds_IRQHandler
+    def_default_handler     PIT_IRQHandler
+    def_default_handler     DAC0_IRQHandler
+    def_default_handler     TSI0_IRQHandler
     def_default_handler     MCG_IRQHandler
     def_default_handler     LPTimer_IRQHandler
     def_default_handler     PORTA_IRQHandler
