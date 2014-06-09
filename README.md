@@ -1,13 +1,11 @@
-kinetis_klxx_gcc
+kinetis_gcc
 ================
 
-Kinetis L - gpio demo using CMSIS files, ARM GCC.
+Kinetis L/K - gpio demo using CMSIS files, ARM GCC and Makefiles. Consider this repository as simple baremetal gpio demo.
 
 ### BASIC INFO
-Please build the demo using the makefile, flash openSDA with CMSIS-DAP interface shared on mbed site. KL25Z has official CMSIS-DAP interface, find it on mbed. For the rest of the freedom platforms, visit link for CMSIS-DAP "testing" versions
-[mbed.org CMSIS-DAP for the freedom platform](http://mbed.org/users/Kojto/notebook/cmsis-dap-for-the-freedom-platform-kl05-kl25-kl46-/).
-
-Once they will be officially released, I'll add a link here.
+Please build the demo using the makefile, flash openSDA with CMSIS-DAP interface shared on mbed site. KL25Z/KL05Z/KL46Z/K64F has official CMSIS-DAP interface, find it on mbed.
+[mbed.org CMSIS-DAP for the freedom platform](http://mbed.org/platforms).
 
 Then just copy the output .bin file to the msd drive on your computer (named mbed). The LED should be blinking.
 
@@ -25,5 +23,8 @@ KL02 project added.
 v0.3
 KL05, KL46 files added.
 
+v0.4 (9. June 2014)
+K64F files added. This repository contains support for Kinetis K.
+
 --------
-Martin Kojtal (0xc0170), 2013
+Created by Martin Kojtal (0xc0170), 2013
